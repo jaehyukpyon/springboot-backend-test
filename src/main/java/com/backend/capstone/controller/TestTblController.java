@@ -1,6 +1,6 @@
 package com.backend.capstone.controller;
 
-import com.backend.capstone.json.TestTblJson;
+import com.backend.capstone.mybatis.dto.TestTblDto;
 import com.backend.capstone.service.TestTblService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,13 @@ public class TestTblController {
     private final TestTblService testTblService;
 
     @GetMapping(value = "/api/testtbl")
-    public ResponseEntity<List<TestTblJson>> getAllTestTbl() {
-        return new ResponseEntity<>(testTblService.getAllTextTbl(), HttpStatus.OK);
+    public List<TestTblDto> getAllTestTbl() {
+        //return new ResponseEntity<>(testTblService.getAllTextTbl(), HttpStatus.OK);
+        List<TestTblDto> result = testTblService.getAllTextTbl();
+        for (TestTblDto t : result) {
+            System.out.println("t = " + t);
+        }
+        return testTblService.getAllTextTbl();
     }
 
 }

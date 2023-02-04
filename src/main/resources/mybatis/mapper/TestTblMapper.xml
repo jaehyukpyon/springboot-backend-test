@@ -6,8 +6,7 @@
 <mapper namespace="com.backend.capstone.mybatis.mapper.TestTblMapper">
 
     <select id="allTestTbl" resultType="com.backend.capstone.mybatis.dto.TestTblDto">
-        select id, name, email, age
-        from testtbl
+        SELECT * FROM test_tbl2
     </select>
 
 </mapper>

@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 public class TestTblJson {
 
     private int id;
-    private String name;
+    private String username;
     private String email;
     private int age;
 
     public TestTblJson(TestTblDto testTblDto) {
         this.id = testTblDto.getId();
-        this.name = testTblDto.getName();
+        this.username = testTblDto.getUsername();
         this.email = testTblDto.getEmail();
         this.age = testTblDto.getAge();
     }
